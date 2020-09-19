@@ -11,7 +11,7 @@ public class WordCount {
 			return result;
 		}
 
-		text = removePunctuations(text);
+		text = removePunctuationsAndSpaces(text);
 		text = toLowerCaseText(text);
 
 		String[] words = text.split(" ");
@@ -20,8 +20,8 @@ public class WordCount {
 		return wordSet.size();
 	}
 
-	private String removePunctuations(String text) {
-		return text.replaceAll("\\p{P}", "");
+	private String removePunctuationsAndSpaces(String text) {
+		return text.trim().replaceAll("[., ]+", "");
 	}
 
 	private String toLowerCaseText(String text) {

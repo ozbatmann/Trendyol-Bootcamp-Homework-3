@@ -11,7 +11,7 @@ public class WordCountTest {
 	@Test
 	public void getWordCount_shouldReturnCorrectWordCount(){
 		//Arrange
-		String text  = "this is a test";
+		String text  = "I'm";
 
 		//Act
 		int result = sut.getWordCount(text);
@@ -54,6 +54,17 @@ public class WordCountTest {
 	public void getWordCount_shouldReturnCorrectResultWhenDuplicateLowerAndUpperCaseStringGivenInTheText(){
 		//Arrange
 		String text  = "text Text";
+
+		//Act
+		int result = sut.getWordCount(text);
+
+		//Assert
+		assertThat(result).isEqualTo(1);
+	}
+	@Test
+	public void getWordCount_shouldReturnCorrectResultWhenMultipleSpacesGivenInTheText(){
+		//Arrange
+		String text  = "    text      Text      ";
 
 		//Act
 		int result = sut.getWordCount(text);
