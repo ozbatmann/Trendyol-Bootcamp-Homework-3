@@ -1,5 +1,3 @@
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -9,9 +7,9 @@ public class WordCountTest {
 	private final WordCount sut = new WordCount();
 
 	@Test
-	public void getWordCount_shouldReturnCorrectWordCount(){
+	public void getWordCount_shouldReturnCorrectWordCount() {
 		//Arrange
-		String text  = "I'm";
+		String text = "I'm";
 
 		//Act
 		int result = sut.getWordCount(text);
@@ -19,8 +17,9 @@ public class WordCountTest {
 		//Assert
 		assertThat(result).isEqualTo(text.split(" ").length);
 	}
+
 	@Test
-	public void getWordCount_shouldReturnZeroWhenNullTextGiven(){
+	public void getWordCount_shouldReturnZeroWhenNullTextGiven() {
 		//Arrange
 
 		//Act
@@ -29,8 +28,9 @@ public class WordCountTest {
 		//Assert
 		assertThat(result).isEqualTo(0);
 	}
+
 	@Test
-	public void getWordCount_shouldReturnZeroWhenEmptyTextGiven(){
+	public void getWordCount_shouldReturnZeroWhenEmptyTextGiven() {
 		//Arrange
 
 		//Act
@@ -39,10 +39,11 @@ public class WordCountTest {
 		//Assert
 		assertThat(result).isEqualTo(0);
 	}
+
 	@Test
-	public void getWordCount_shouldReturnZeroWhenDuplicateTextGivenInTheText(){
+	public void getWordCount_shouldReturnZeroWhenDuplicateTextGivenInTheText() {
 		//Arrange
-		String text  = "text text";
+		String text = "text text";
 
 		//Act
 		int result = sut.getWordCount(text);
@@ -50,10 +51,11 @@ public class WordCountTest {
 		//Assert
 		assertThat(result).isEqualTo(1);
 	}
+
 	@Test
-	public void getWordCount_shouldReturnCorrectResultWhenDuplicateLowerAndUpperCaseStringGivenInTheText(){
+	public void getWordCount_shouldReturnCorrectResultWhenDuplicateLowerAndUpperCaseStringGivenInTheText() {
 		//Arrange
-		String text  = "text Text";
+		String text = "text Text";
 
 		//Act
 		int result = sut.getWordCount(text);
@@ -61,10 +63,11 @@ public class WordCountTest {
 		//Assert
 		assertThat(result).isEqualTo(1);
 	}
+
 	@Test
-	public void getWordCount_shouldReturnCorrectResultWhenMultipleSpacesGivenInTheText(){
+	public void getWordCount_shouldReturnCorrectResultWhenMultipleSpacesGivenInTheText() {
 		//Arrange
-		String text  = "    text      Text      ";
+		String text = "    text      Text      ";
 
 		//Act
 		int result = sut.getWordCount(text);
