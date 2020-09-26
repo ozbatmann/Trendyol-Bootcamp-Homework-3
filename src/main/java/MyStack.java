@@ -1,3 +1,5 @@
+import org.assertj.core.internal.bytebuddy.implementation.bytecode.Throw;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +16,7 @@ public class MyStack<T> {
 	}
 
 	public void push(T deneme) {
+		if(deneme == null) throw new NullPointerException();
 		stack.add(deneme);
 	}
 

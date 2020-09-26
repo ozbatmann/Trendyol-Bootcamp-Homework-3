@@ -91,4 +91,14 @@ public class StackImplTest {
 		Exception exception = Assertions.assertThrows(UnsupportedOperationException.class, sut::peek);
 		assertThat("Stack is empty").isEqualTo(exception.getMessage());
 	}
+
+	@Test
+	public void push_itShouldThrowExceptionWhenGivenItemIsNull() {
+		//Arrange
+		String item = null;
+
+		//Act and Verify
+		Exception exception = Assertions.assertThrows(NullPointerException.class, () -> sut.push(item));
+
+	}
 }
